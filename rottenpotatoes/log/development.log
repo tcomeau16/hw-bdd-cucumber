@@ -529,3 +529,34 @@ Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-23 13:57:16 
   [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "id"."title" = 'Test' LIMIT 1[0m
   [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (title = "Test")
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "movies" WHERE (title = "Test")[0m
+
+
+Started GET "/assets/rails.png" for 47.55.92.146 at 2017-06-29 23:23:08 +0000
+
+
+Started GET "/movies" for 47.55.92.146 at 2017-06-29 23:23:13 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (46.0ms)
+Completed 200 OK in 265ms (Views: 248.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 47.55.92.146 at 2017-06-29 23:23:13 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 47.55.92.146 at 2017-06-29 23:23:13 +0000
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BR%5D=1&commit=Refresh" for 47.55.92.146 at 2017-06-29 23:23:21 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to https://potato-tcomeau16.c9users.io/movies?ratings%5BG%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BR%5D=1" for 47.55.92.146 at 2017-06-29 23:23:21 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'R')
+  Rendered movies/index.html.haml within layouts/application (15.5ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.3ms)
