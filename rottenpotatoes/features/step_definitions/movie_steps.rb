@@ -36,5 +36,10 @@ end
 
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
-  fail "Unimplemented"
+  #fail "Unimplemented"
+  if page.expect(rows).to eq Movie.count
+    true
+  else
+    false
+  end
 end
