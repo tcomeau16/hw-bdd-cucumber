@@ -45,21 +45,6 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-#Given /^(?:|I )check the following ratings:"([^"]*).*"$/ do |field|
-#  ratings = field.split(',')
-#  ratings.each do |x|
-#    check("ratings_" + x.strip) 
-#  end
-#end
-
-#Given /^(?:|I )uncheck the following ratings:"([^"]*).*"$/ do |field|
-#  ratings = field.split(',')
-#  ratings.each do |x|
-#    uncheck("ratings_" + x.strip) 
-#  end
-#end
-
-
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -103,12 +88,10 @@ When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
 end
 
 When /^(?:|I )check "([^"]*)"$/ do |field|
-  field = "ratings_" + field
   check(field)
 end
 
 When /^(?:|I )uncheck "([^"]*)"$/ do |field|
-  field = "ratings_" + field
   uncheck(field)
 end
 

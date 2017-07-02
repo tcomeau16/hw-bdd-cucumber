@@ -24,12 +24,12 @@ Background: movies have been added to database
 Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to check the 'PG' and 'R' checkboxes
   
-  Given I check the following ratings: "PG, R"
+  When I check the following ratings: "PG, R"
   #When I check "PG"
   #And I check "R"
  
   # enter step(s) to uncheck all other checkboxes
-  Given I uncheck the following ratings:"PG-13, G, NC-17"
+  When I uncheck the following ratings: "PG-13, G, NC-17"
   #And I uncheck "PG-13"
   #And I uncheck "G"
   #And I uncheck "NC-17"
@@ -55,6 +55,6 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   
 Scenario: all ratings selected
   # see assignment
-  #Given I check the following ratings:"PG, R, PG-13, G, NC-17"
-  #And I press "submit"
-  #Then I should see all the movies
+  When I check the following ratings: "PG, R, PG-13, G, NC-17"
+  And I press "submit"
+  Then I should see all the movies
